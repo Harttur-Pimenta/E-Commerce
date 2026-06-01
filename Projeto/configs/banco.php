@@ -1,20 +1,14 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'banco_mao');
-define('DB_USER', 'rootphp');
-define('DB_PASS', '123456');
+$host = "localhost";
+$usuario = "root";
+$senha = "123456";
+$banco = "banco_byte";
 
-try {
-    $pdo = new PDO(
-        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
-        DB_USER,
-        DB_PASS
-    );
+$conn = new mysqli($host, $usuario, $senha, $banco);
 
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-} catch (PDOException $e) {
-    die('Erro de conexão: ' . $e->getMessage());
+if ($conn->connect_error) {
+    die("Erro de conexão: " . $conn->connect_error);
 }
+
+?>

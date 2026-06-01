@@ -261,8 +261,8 @@ body::before {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -271,8 +271,11 @@ body::before {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 2rem;
-    position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
 }
 
 .stat-card::before {
@@ -284,7 +287,11 @@ body::before {
     opacity: 0;
     transition: opacity .3s;
 }
-.stat-card:hover::before { opacity: 1; }
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-amber);
+}
 
 .stat-label {
     font-size: 1.1rem;
@@ -303,12 +310,82 @@ body::before {
     margin: .4rem 0;
 }
 
+.btn-cart{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:var(--surface2);
+    color:var(--amber);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+}
+
+.btn-cart:hover{
+    background:var(--amber);
+    color:#000;
+    transform:translateY(-1px);
+}
+
 .stat-meta {
     font-size: 1.1rem;
     color: var(--muted);
     display: flex;
     align-items: center;
     gap: .4rem;
+}
+
+.produto-acoes{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin-top:1rem;
+}
+
+.qtd-input{
+    width:80px;
+    margin:0;
+}
+
+.produto-acoes .qtd-input{
+    width:70px;
+    height:42px;
+    margin:0;
+}
+
+.product-image{
+    width:100%;
+    height:220px;
+    object-fit:contain; /* mantém a imagem inteira */
+    background:#fff;
+    border:3px solid #fff;
+    border-radius:10px;
+    padding:10px;
+    display:block;
+    margin:0 auto 1.5rem auto;
+}
+
+.product-image-empty{
+    width:100%;
+    height:220px;
+    background:#fff;
+    border:3px solid #fff;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:5rem;
+    margin-bottom:1.5rem;
+}
+
+.produto-acoes button{
+    margin-top:0 !important;
+    height:42px;
+    padding:0 1.6rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .stat-meta .up { color: var(--success); }
@@ -733,7 +810,7 @@ select option { background: var(--surface2); }
 }
 
 .section-label {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: .12em;
     color: var(--muted);
