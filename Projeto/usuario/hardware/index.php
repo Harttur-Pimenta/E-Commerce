@@ -49,7 +49,7 @@ include '../../configs/header.php';
             <!-- Produtos de Escritorio -->
 
             <div class="section-label" style="margin-top:2rem;">
-                📦 Todos os Produtos de Hardware
+                Todos os Produtos de Hardware
             </div>
 
             <div class="stats-grid">

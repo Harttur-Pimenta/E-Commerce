@@ -49,7 +49,7 @@ include '../../configs/header.php';
             <!-- Produtos de Escritorio -->
 
             <div class="section-label" style="margin-top:2rem;">
-                📦 Todos os Produtos de PC Gamer
+                Todos os Produtos de PC Gamer
             </div>
 
             <div class="stats-grid">
@@ -63,7 +63,7 @@ include '../../configs/header.php';
                                 alt="<?= htmlspecialchars($produto['nome']) ?>"
                                 class="product-image">
                         <?php else: ?>
-                            <div class="product-image-empty">📦</div>
+                            <div class="product-image-empty"></div>
                         <?php endif; ?>
 
                         <div class="stat-label">

@@ -53,7 +53,7 @@ include '../../configs/header.php';
             <!-- Destaques -->
 
             <div class="section-label" style="margin-top:2rem;">
-                📦 Promoções e produtos disponíveis na ByteStore
+                Promoções e produtos disponíveis na ByteStore
             </div>
             <div class="stats-grid">
 
@@ -104,7 +104,7 @@ include '../../configs/header.php';
             <!-- Todos os Produtos -->
 
             <div class="section-label" style="margin-top:4rem;">
-                📦 Todos os Produtos
+                Todos os Produtos
             </div>
 
             <div class="stats-grid">
