@@ -919,3 +919,62 @@ button:not([class]):hover {
     opacity:.9;
     transform:translateY(-1px);
 }
+.cart-count{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    min-width:18px;
+    height:18px;
+    padding:0 5px;
+    border-radius:999px;
+    background:var(--danger);
+    color:#fff;
+    font-size:1rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-cart{ position:relative; }
+
+.product-badge{
+    position:absolute;
+    top:1rem;
+    left:1rem;
+    background:var(--amber);
+    color:#000;
+    padding:.4rem 1rem;
+    border-radius:999px;
+    font-size:1.1rem;
+    font-weight:700;
+    z-index:2;
+}
+
+.product-desc{
+    margin:1rem 0;
+    color:var(--muted);
+    font-size:1.2rem;
+    min-height:38px;
+}
+
+.stat-card{
+    min-height:430px;
+    display:flex;
+    flex-direction:column;
+}
+
+.stat-card form{
+    margin-top:auto;
+}
+
+.table-wrapper table .btn-delete,
+.table-wrapper table .btn{
+    margin-right:.5rem;
+}
+
+@media (max-width: 768px){
+    .header .container{ gap:1rem; }
+    .header-actions{ gap:.6rem; }
+    .btn-logout{ padding:8px 12px; }
+}

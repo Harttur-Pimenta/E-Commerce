@@ -1,15 +1,8 @@
 <?php
 session_start();
-
-if (isset($_GET['id'])) {
-
-    $id = $_GET['id'];
-
-    if (isset($_SESSION['carrinho'][$id])) {
-        unset($_SESSION['carrinho'][$id]);
-    }
-
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if ($id > 0 && isset($_SESSION['carrinho'][$id])) {
+    unset($_SESSION['carrinho'][$id]);
 }
-
-header("Location: index.php");
-exit;
+header('Location: index.php');
+exit();

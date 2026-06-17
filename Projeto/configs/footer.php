@@ -1,9 +1,6 @@
-<?php
-?>
-
 <footer class="footer">
     <div class="container">
-        <p>Mãos à Obra &copy; <?= date('Y') ?> — Sistema de Gestão de Obras</p>
+        <p>ByteStore &copy; <?= date('Y') ?> — E-commerce em PHP e MariaDB</p>
     </div>
 </footer>
 
