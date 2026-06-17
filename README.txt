@@ -1,111 +1,78 @@
 # ByteStore
 
-## Trabalho Final – Tecnologias para Internet
+Sistema completo de E-Commerce desenvolvido em PHP e MariaDB para gerenciamento de vendas online, controle de produtos, administração de usuários e processamento de pedidos.
 
-Sistema completo de E-Commerce desenvolvido em PHP e MariaDB como trabalho final da disciplina **Tecnologias para Internet**.
-
-O projeto foi construído com foco na aplicação prática dos conceitos estudados durante a disciplina, incluindo autenticação de usuários, manipulação de sessões, integração com banco de dados, operações CRUD, gerenciamento de pedidos, carrinho de compras e desenvolvimento de interfaces web responsivas.
+A plataforma foi projetada para fornecer uma experiência completa de comércio eletrônico, contemplando tanto a área de vendas para clientes quanto um painel administrativo para gerenciamento da operação.
 
 ---
 
-# Objetivo
+# Visão Geral
 
-A ByteStore é uma loja virtual desenvolvida para permitir a comercialização de produtos de informática e tecnologia através de uma plataforma web moderna, organizada e segura.
+A ByteStore é uma aplicação web que permite a comercialização de produtos através de uma interface moderna, intuitiva e responsiva.
 
-O sistema contempla dois perfis distintos de usuários:
-
-* Administrador
-* Cliente
-
-Cada perfil possui permissões específicas e funcionalidades próprias.
+O sistema oferece recursos de catálogo de produtos, carrinho de compras, autenticação de usuários, processamento de pedidos, gerenciamento de vendas e administração completa do ambiente de comércio eletrônico.
 
 ---
 
-# Tecnologias Utilizadas
+# Principais Funcionalidades
 
-## Backend
+## Catálogo de Produtos
 
-* PHP 8+
-* Sessões PHP
-* MySQLi
-* MariaDB
+A vitrine principal da loja exibe os produtos disponíveis para venda de forma organizada e intuitiva.
 
-## Frontend
+### Recursos
 
-* HTML5
-* CSS3
-* JavaScript
-* Design Responsivo
-
-## Banco de Dados
-
-* MariaDB
-
-## Ambiente de Desenvolvimento
-
-* GitHub Codespaces
-* Linux
-* VS Code
-
----
-
-# Funcionalidades Implementadas
-
-## Área Pública
-
-### Vitrine de Produtos
-
-A página principal da loja exibe:
-
+* Exibição de produtos em destaque
 * Produtos em promoção
-* Todos os produtos cadastrados
 * Imagens dos produtos
-* Preços formatados
-* Descrições
-* Controle de quantidade
-* Adição ao carrinho
+* Descrições detalhadas
+* Controle de estoque
+* Organização por categorias
+* Layout responsivo
 
 ---
 
-### Filtro por Categorias
+## Categorias de Produtos
 
-Os produtos podem ser filtrados por categoria:
+Os produtos são organizados em categorias para facilitar a navegação e localização de itens.
+
+### Categorias Disponíveis
 
 * Hardware
 * PC Gamer
 * Escritório
 * Acessórios
 
-Isso permite ao cliente localizar rapidamente os produtos desejados.
+Cada categoria possui sua própria página de listagem e filtragem.
 
 ---
 
 ## Carrinho de Compras
 
-O sistema utiliza sessões PHP para armazenar os itens do carrinho.
+O carrinho utiliza sessões PHP para armazenar os itens selecionados pelo cliente.
 
-### Funcionalidades
+### Recursos
 
 * Adicionar produtos
-* Alterar quantidade
-* Remover produto
+* Remover produtos
+* Atualizar quantidades
 * Limpar carrinho
-* Calcular subtotal
-* Calcular total da compra
-
-O carrinho permanece disponível enquanto a sessão do usuário estiver ativa.
+* Cálculo automático de subtotais
+* Cálculo do valor total do pedido
+* Persistência durante a sessão do usuário
 
 ---
 
-## Sistema de Login
+## Sistema de Autenticação
 
-O sistema possui autenticação completa.
+A plataforma possui um sistema completo de autenticação e controle de acesso.
 
 ### Funcionalidades
 
 * Login
 * Logout
 * Controle de sessão
+* Diferenciação de perfis
 * Proteção de páginas restritas
 
 ---
@@ -114,104 +81,109 @@ O sistema possui autenticação completa.
 
 ### Cliente
 
-Pode:
+Permissões:
 
-* Navegar pela loja
-* Adicionar produtos ao carrinho
-* Finalizar compras
-* Consultar histórico de pedidos
+* Navegar pelos produtos
+* Utilizar o carrinho de compras
+* Finalizar pedidos
+* Consultar histórico de compras
+* Gerenciar dados pessoais
 
 ### Administrador
 
-Pode:
+Permissões:
 
 * Gerenciar produtos
 * Gerenciar usuários
-* Gerenciar vendas
-* Alterar status dos pedidos
+* Gerenciar pedidos
+* Alterar status de vendas
+* Acessar relatórios administrativos
 
 ---
 
-# Checkout
+# Processo de Compra
 
-Após finalizar o carrinho o usuário é direcionado para a tela de pagamento.
+O fluxo de compra foi desenvolvido para simular uma operação real de comércio eletrônico.
 
-### Formas de Pagamento Simuladas
+## Etapas
+
+1. Seleção dos produtos
+2. Inclusão no carrinho
+3. Revisão do pedido
+4. Login ou cadastro
+5. Escolha da forma de pagamento
+6. Confirmação da compra
+7. Registro do pedido
+
+---
+
+# Formas de Pagamento
+
+O sistema possui um módulo de pagamento simulado com as seguintes opções:
 
 * PIX
-* Boleto
+* Boleto Bancário
 * Cartão de Crédito
 
-Após a confirmação:
-
-* O pedido é registrado no banco
-* Os itens são registrados em itens_pedido
-* O carrinho é limpo automaticamente
+Após a confirmação do pagamento, o pedido é registrado automaticamente no banco de dados.
 
 ---
 
 # Histórico de Pedidos
 
-Cada cliente possui uma área exclusiva para acompanhar suas compras.
+Cada cliente possui acesso ao histórico completo de compras realizadas.
 
-### Informações exibidas
+### Informações Disponíveis
 
 * Número do pedido
-* Data
+* Data da compra
 * Valor total
-* Status
 * Forma de pagamento
+* Status do pedido
 
 ---
 
 # Painel Administrativo
 
-## CRUD de Produtos
+## Gerenciamento de Produtos
 
-Permite:
+Permite o gerenciamento completo do catálogo da loja.
 
-* Cadastrar produtos
-* Listar produtos
-* Editar produtos
-* Excluir produtos
+### Funcionalidades
+
+* Cadastro de produtos
+* Edição de produtos
+* Exclusão de produtos
 * Upload de imagens
-
-### Informações dos Produtos
-
-* Nome
-* Descrição
-* Preço
-* Estoque
-* Categoria
-* Imagem
-* Promoção
+* Controle de estoque
+* Definição de promoções
+* Organização por categoria
 
 ---
 
-## CRUD de Usuários
+## Gerenciamento de Usuários
 
-Permite:
+Permite o controle dos usuários cadastrados na plataforma.
 
-* Cadastrar usuários
-* Listar usuários
-* Editar usuários
-* Excluir usuários
+### Funcionalidades
 
-### Perfis
-
-* Administrador
-* Cliente
+* Cadastro de usuários
+* Edição de informações
+* Exclusão de registros
+* Definição de perfil de acesso
 
 ---
 
-## Relatório de Vendas
+## Gerenciamento de Vendas
 
-Permite ao administrador:
+Permite acompanhar todas as vendas realizadas na plataforma.
 
-* Visualizar pedidos realizados
-* Consultar detalhes da compra
-* Ver produtos comprados
-* Alterar status do pedido
+### Funcionalidades
+
+* Listagem de pedidos
+* Consulta de detalhes da compra
+* Visualização dos itens vendidos
+* Controle de status
 
 ### Status Disponíveis
 
@@ -259,55 +231,73 @@ Projeto/
 
 # Banco de Dados
 
-## Principais Tabelas
+O sistema utiliza MariaDB para armazenamento persistente das informações.
 
-### usuarios
+## Principais Entidades
 
-Armazena os usuários do sistema.
+### Usuários
 
-### produtos
+Responsável pelo gerenciamento dos perfis de acesso.
 
-Armazena os produtos disponíveis para venda.
+### Produtos
 
-### categorias
+Armazena informações dos produtos comercializados.
 
-Armazena as categorias dos produtos.
+### Categorias
 
-### pedidos
+Organiza os produtos por segmento.
 
-Armazena os pedidos realizados.
+### Pedidos
 
-### itens_pedido
+Registra todas as compras realizadas.
+
+### Itens do Pedido
 
 Armazena os produtos pertencentes a cada pedido.
 
 ---
 
+# Tecnologias Utilizadas
+
+## Backend
+
+* PHP 8+
+* MySQLi
+* Sessões PHP
+
+## Banco de Dados
+
+* MariaDB
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Ambiente
+
+* Linux
+* GitHub Codespaces
+* Visual Studio Code
+
+---
+
 # Instalação
 
-## 1. Iniciar o MariaDB
+## Iniciar o Banco de Dados
 
 ```bash
 sudo service mariadb start
 ```
 
----
-
-## 2. Importar o banco
+## Importar a Estrutura do Banco
 
 ```bash
 mariadb -u root -p < Projeto/banco_byte.sql
 ```
 
-Senha padrão:
-
-```text
-123456
-```
-
----
-
-## 3. Configurar conexão
+## Configurar a Conexão
 
 Arquivo:
 
@@ -315,18 +305,7 @@ Arquivo:
 Projeto/configs/banco.php
 ```
 
-Verifique:
-
-```php
-$host = "localhost";
-$usuario = "root";
-$senha = "123456";
-$banco = "banco_byte";
-```
-
----
-
-## 4. Executar o projeto
+## Executar o Projeto
 
 ```bash
 php -S 0.0.0.0:8000
@@ -334,48 +313,46 @@ php -S 0.0.0.0:8000
 
 ---
 
-# Credenciais de Teste
+# Credenciais de Demonstração
 
 ## Administrador
 
-```text
-Email: admin@bytestore.com
-Senha: 123456
-```
+Email: [admin@bytestore.com](mailto:admin@bytestore.com)
 
----
+Senha: 123456
 
 ## Cliente
 
-```text
-Email: cliente@bytestore.com
+Email: [cliente@bytestore.com](mailto:cliente@bytestore.com)
+
 Senha: 123456
-```
 
 ---
 
-# Segurança Implementada
+# Segurança
 
-* Senhas criptografadas com password_hash()
-* Validação de login
+Recursos implementados:
+
+* Criptografia de senhas com password_hash()
+* Verificação com password_verify()
 * Controle de sessão
-* Restrição de páginas administrativas
-* Proteção básica contra acesso não autorizado
-* Uso de prepared statements no MySQLi
+* Restrição de acesso por perfil
+* Prepared Statements
+* Proteção de páginas administrativas
+* Validação de autenticação
 
 ---
 
 # Responsividade
 
-O sistema foi desenvolvido para funcionar em:
+A interface foi desenvolvida para funcionar adequadamente em:
 
-* Computadores
-* Tablets
-* Smartphones
+* Desktop
+* Tablet
+* Smartphone
 
 ---
 
-# Autor
+# Licença
 
-Harttur Oliveira Pimenta
-
+Projeto desenvolvido para fins educacionais e demonstração de conceitos de desenvolvimento web utilizando PHP e MariaDB.
