@@ -9,7 +9,6 @@ include '../../configs/header.php';
 ?>
 <main class="main"><div class="container">
     <div class="page-header"><h1 class="page-title"><span>Admin Produtos</span></h1><a class="btn btn-primary" href="cadastrar.php">+ Produto</a></div>
-    <div style="margin-bottom:1.5rem;"><a class="btn btn-secondary" href="/Projeto/admin/usuarios/index.php">Usuários</a> <a class="btn btn-secondary" href="/Projeto/admin/pedidos/index.php">Vendas</a></div>
     <div class="table-wrapper"><table>
         <thead><tr><th>ID</th><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Promoção</th><th>Ações</th></tr></thead>
         <tbody><?php while ($p = $produtos->fetch_assoc()): ?>

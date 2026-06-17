@@ -56,6 +56,9 @@ $itensCarrinho = total_itens_carrinho();
 
         <div class="header-actions">
             <?php if (usuario_admin()): ?>
+                <a class="avatar" title="Usuário Administrador">
+                        <?= strtoupper(substr($_SESSION['usuario_nome'] ?? 'U', 0, 1)) ?>
+                </a>
                 <a href="/Projeto/usuario/logout/index.php" class="btn-logout">Sair</a>
             <?php else: ?>
                 <a href="/Projeto/usuario/carrinho/index.php" class="btn-cart" title="Carrinho">
